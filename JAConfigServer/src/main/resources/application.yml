@@ -8,6 +8,11 @@ spring:
           #searchPaths: ConfigData
           #"native" is used when the native profile is active, for local tests with a classpath repo:
         native:
+          #earchLocations: \\10.10.2.90\erpspring\WORKFLOW_TRACKING\CONFIG-CLOUD
           searchLocations: classpath:offline-repository/
+          
+  profiles:
+    active: native 
+              
 server:
   port: 8001
