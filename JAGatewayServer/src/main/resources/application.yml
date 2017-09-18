@@ -1,13 +1,31 @@
----
-# This default profile is used when running a single instance completely standalone:
-spring:
-  profiles: default
-server:
-  port: 8060
+##Controlado desde el Config Server
+#---
 
-# Allow thymeleaf template changes to reload:
-spring.thymeleaf.cache: false
+###Relacionado al Discovery Service
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8002/eureka/
+#      
+## This default profile is used when running a single instance completely standalone:
+#spring:
+#  profiles: default
+#server:
+#  port: 7999
+#
+## Allow thymeleaf template changes to reload:
+#spring.thymeleaf.cache: false
+#
+##zuul: los servicios pueden ser antecedidos por este prefijo
+#zuul:
+#  prefix: /api
+#  ignored-services: seguridadLocal        
+#  routes:
+#    seguridadGeneral:      
+#      path: /seguridad-service/**
+#      url: http://localhost:8073
 
-# Zuul-proxied services can be found by calling /services/subject, /services/verb, etc.
-zuul:
-  prefix: /api
